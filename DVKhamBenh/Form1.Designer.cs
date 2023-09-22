@@ -295,6 +295,7 @@
             btnXacNhan.TabIndex = 6;
             btnXacNhan.Text = "Xác nhận";
             btnXacNhan.UseVisualStyleBackColor = true;
+            btnXacNhan.Click += btnXacNhan_Click;
             // 
             // btnXoa
             // 
@@ -305,6 +306,7 @@
             btnXoa.TabIndex = 6;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
             // 
             // btnThoat
             // 
@@ -315,6 +317,7 @@
             btnThoat.TabIndex = 6;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = true;
+            btnThoat.Click += btnThoat_Click;
             // 
             // Form1
             // 
@@ -334,6 +337,7 @@
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

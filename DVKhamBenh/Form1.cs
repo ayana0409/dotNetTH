@@ -5,6 +5,8 @@
         public Form1()
         {
             InitializeComponent();
+            rtxtKetQua.Clear();
+
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
@@ -65,6 +67,32 @@
         private void txtHoTen_TextChanged(object sender, EventArgs e)
         {
             UpdateKetQua();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            rtxtKetQua.Clear();
+
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show
+                (
+                "Bạn có muốn đóng chương trình?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                );
+            if (rs == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Mời đến phòng số ... để khám");
         }
     }
 }
