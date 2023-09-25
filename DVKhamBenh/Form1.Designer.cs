@@ -194,7 +194,6 @@
             lbChonDichVu.Dock = DockStyle.Fill;
             lbChonDichVu.FormattingEnabled = true;
             lbChonDichVu.ItemHeight = 21;
-            lbChonDichVu.Items.AddRange(new object[] { "Siêu âm", "Thử máu", "Nội soi", "X-Quang", "Khám ấy" });
             lbChonDichVu.Location = new Point(3, 25);
             lbChonDichVu.Name = "lbChonDichVu";
             lbChonDichVu.Size = new Size(250, 155);
@@ -339,6 +338,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);

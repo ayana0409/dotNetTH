@@ -5,8 +5,23 @@
         public Form1()
         {
             InitializeComponent();
-            rtxtKetQua.Clear();
 
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            rtxtKetQua.Clear();
+            LoadDichVu();
+        }
+        string[] listDV = { "Nội soi", "Thử máu", "Siêu âm", "X-Quang", "Khám ấy" };
+
+        private void LoadDichVu()
+        {
+            lbChonDichVu.Items.Clear();
+            foreach (string v in listDV)
+            {
+                lbChonDichVu.Items.Add(v);
+            }
+            lbChonDichVu.Sorted = true;
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
@@ -18,7 +33,10 @@
              */
             if (lbChonDichVu.SelectedIndex != -1)
                 if (!lbDichVuDaChon.Items.Contains(lbChonDichVu.SelectedItem))
+                {
                     lbDichVuDaChon.Items.Add(lbChonDichVu.SelectedItem);
+                    lbChonDichVu.Items.Remove(lbChonDichVu.SelectedItem);
+                }
             UpdateKetQua();
         }
 
@@ -30,17 +48,22 @@
                 lbDichVuDaChon.Items.Add(item);
                 UpdateKetQua();
             }
+            lbChonDichVu.Items.Clear();
         }
         private void btnDeselect_Click(object sender, EventArgs e)
         {
             if (lbDichVuDaChon.SelectedIndex != -1)
+            {
+                lbChonDichVu.Items.Add(lbDichVuDaChon.SelectedItem);
                 lbDichVuDaChon.Items.RemoveAt(lbDichVuDaChon.SelectedIndex);
+            }
             UpdateKetQua();
         }
 
         private void btnDeselectAll_Click(object sender, EventArgs e)
         {
             lbDichVuDaChon.Items.Clear();
+            LoadDichVu();
             UpdateKetQua();
         }
 
@@ -72,6 +95,11 @@
         private void btnXoa_Click(object sender, EventArgs e)
         {
             rtxtKetQua.Clear();
+            lbDichVuDaChon.Items.Clear();
+            txtHoTen.Clear();
+            txtQueQuan.Clear();
+            txtDienThoai.Clear();
+            LoadDichVu();
 
         }
 
@@ -92,7 +120,17 @@
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
+            if (txtHoTen.Text == String.Empty ||
+                txtDienThoai.Text == String.Empty ||
+                txtQueQuan.Text == String.Empty ||
+                cboGioiTinh.SelectedValue == String.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+                return;
+            }
             MessageBox.Show("Mời đến phòng số ... để khám");
         }
+
+
     }
 }
