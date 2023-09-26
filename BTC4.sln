@@ -5,7 +5,11 @@ VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiaiPT", "GiaiPT\GiaiPT.csproj", "{6C379E5B-CC2C-4B93-AB84-D1B54B381B0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVKhamBenh", "DVKhamBenh\DVKhamBenh.csproj", "{115D8477-F732-4B45-B61B-780D2A16E0C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DVKhamBenh", "DVKhamBenh\DVKhamBenh.csproj", "{115D8477-F732-4B45-B61B-780D2A16E0C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_calculator", "..\..\Chuong1\02_calculator\02_calculator.csproj", "{67F97EFC-9B48-4FEA-A301-425AA4D8672D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_login", "..\..\Chuong1\01_login\01_login.csproj", "{793B6EF1-5B32-49ED-9D28-D9BB887B0FC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{115D8477-F732-4B45-B61B-780D2A16E0C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{115D8477-F732-4B45-B61B-780D2A16E0C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{115D8477-F732-4B45-B61B-780D2A16E0C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67F97EFC-9B48-4FEA-A301-425AA4D8672D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67F97EFC-9B48-4FEA-A301-425AA4D8672D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67F97EFC-9B48-4FEA-A301-425AA4D8672D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67F97EFC-9B48-4FEA-A301-425AA4D8672D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{793B6EF1-5B32-49ED-9D28-D9BB887B0FC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{793B6EF1-5B32-49ED-9D28-D9BB887B0FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{793B6EF1-5B32-49ED-9D28-D9BB887B0FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{793B6EF1-5B32-49ED-9D28-D9BB887B0FC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
