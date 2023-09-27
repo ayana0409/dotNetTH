@@ -43,11 +43,11 @@
         private void btnSelectAll_Click(object sender, EventArgs e)
         {
             lbDichVuDaChon.Items.Clear();
-            foreach (string item in lbChonDichVu.Items)
+            foreach (string item in listDV)
             {
                 lbDichVuDaChon.Items.Add(item);
-                UpdateKetQua();
             }
+                UpdateKetQua();
             lbChonDichVu.Items.Clear();
         }
         private void btnDeselect_Click(object sender, EventArgs e)
