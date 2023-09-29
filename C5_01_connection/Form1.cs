@@ -7,19 +7,16 @@ namespace C5_01_connection
 {
     public partial class Form1 : Form
     {
-
         readonly string connStr = "Data Source=THUANDUONG\\THUANDATA;Initial Catalog=Sach;Integrated Security=True; TrustServerCertificate = True";
         SqlConnection? conn = null;
         public Form1()
         {
             InitializeComponent();
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadData();
         }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (txtMa.Text == String.Empty || txtTen.Text == String.Empty)
@@ -66,7 +63,6 @@ namespace C5_01_connection
                 MessageBox.Show("Có lỗi xảy ra! Vui lòng kiểm tra lại thông tin");
             }
         }
-
         private void LoadData()
         {
             conn = new SqlConnection(connStr);
@@ -79,7 +75,6 @@ namespace C5_01_connection
 
             dtgvChuDe.DataSource = dataTB;
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (dtgvChuDe.SelectedCells.Count > 0)
@@ -87,7 +82,6 @@ namespace C5_01_connection
                 DataSet dataSet = GetChuDe();
 
                 string commandText = "Select * from ChuDe";
-
                 SqlConnection connection = new(connStr);
                 SqlDataAdapter dataAdapter = new(commandText, connection);
 
@@ -125,7 +119,6 @@ namespace C5_01_connection
 
             return ds;
         }
-
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             string ten = txtTen.Text;
@@ -148,14 +141,12 @@ namespace C5_01_connection
             dataAdapter.UpdateCommand.Parameters.Add(pr2);
 
             DataTable dataTable = dataSet.Tables[0];
-
             DataRow upRow = dataTable.Rows[rowIndex];
             upRow["TenChuDe"] = ten;
             dataAdapter.Update(dataSet);
 
             LoadData();
         }
-
         private void dtgvChuDe_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = dtgvChuDe.CurrentCell.RowIndex;
