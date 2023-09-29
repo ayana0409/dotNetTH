@@ -11,6 +11,7 @@
         {
             rtxtKetQua.Clear();
             LoadDichVu();
+            cboGioiTinh.SelectedIndex = 0;
         }
         string[] listDV = { "Nội soi", "Thử máu", "Siêu âm", "X-Quang", "Khám ấy" };
 
