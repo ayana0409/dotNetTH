@@ -10,7 +10,7 @@ namespace C5_01_connection
         readonly string connStr = "Data Source=THUANDUONG\\THUANDATA;Initial Catalog=Sach;Integrated Security=True; TrustServerCertificate = True";
         SqlConnection? conn = null;
         public Form1()
-        {
+        { 
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -29,9 +29,26 @@ namespace C5_01_connection
                 string ma = txtMa.Text;
                 string ten = txtTen.Text;
 
-                // Đem dữ liệu nguồn xuống
-                string commandText = "Select * from ChuDe";
                 SqlConnection connection = new(connStr);
+                string commandText = "INSERT INTO ChuDe (MaChuDe, TenChuDe) VALUES (@ma, @ten)";
+                SqlCommand sqlCommand = new SqlCommand(commandText, connection);
+
+                SqlParameter pr1 = new("@ma", SqlDbType.Char);
+                pr1.Value = ma;
+                SqlParameter pr2 = new("@ten", SqlDbType.NVarChar);
+                pr2.Value = ten;
+
+                sqlCommand.Parameters.Add(pr1);
+                sqlCommand.Parameters.Add(pr2);
+
+                connection.Open();
+                int result = sqlCommand.ExecuteNonQuery();
+                connection.Close(); 
+
+
+
+                /*
+                string commandText = "Select * from ChuDe";
                 SqlDataAdapter dataAdapter = new(commandText, connection);
 
                 DataSet dataSet = new();
@@ -56,6 +73,7 @@ namespace C5_01_connection
                 dataAdapter.InsertCommand.Parameters.Add(pr2);
                 // Cập nhật cho dữ liệu nguồn
                 dataAdapter.Update(dataSet);
+                */
                 LoadData();
             }
             catch
