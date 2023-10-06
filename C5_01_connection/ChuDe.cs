@@ -20,6 +20,7 @@ namespace C5_01_connection
         }
         readonly string connStr = "Data Source=THUANDUONG\\THUANDATA;Initial Catalog=Sach;Integrated Security=True; TrustServerCertificate = True";
         SqlConnection? conn = null;
+        DataTable dataTB = new();
         private void ChuDe_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -33,7 +34,6 @@ namespace C5_01_connection
 
             SqlDataAdapter data = new(query, conn);
 
-            DataTable dataTB = new();
             data.Fill(dataTB);
 
             dtgvChuDe.DataSource = dataTB;
@@ -118,8 +118,13 @@ namespace C5_01_connection
         private void dtgvChuDe_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = dtgvChuDe.CurrentCell.RowIndex;
+            DataRow row = dataTB.Rows[rowIndex];
+            txtMa.Text = row["MaChuDe"].ToString();
+            txtTen.Text = row["TenChuDe"].ToString();
+            /*
             txtMa.Text = dtgvChuDe.Rows[rowIndex].Cells[0].Value.ToString();
             txtTen.Text = dtgvChuDe.Rows[rowIndex].Cells[1].Value.ToString();
+            */
         }
     }
 }

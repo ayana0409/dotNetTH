@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             dtgvChuDe = new DataGridView();
+            MaChuDe = new DataGridViewTextBoxColumn();
+            TenChuDe = new DataGridViewTextBoxColumn();
             label1 = new Label();
             txtMa = new TextBox();
             label2 = new Label();
@@ -42,13 +44,30 @@
             // dtgvChuDe
             // 
             dtgvChuDe.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvChuDe.Columns.AddRange(new DataGridViewColumn[] { MaChuDe, TenChuDe });
             dtgvChuDe.Location = new Point(12, 159);
             dtgvChuDe.Name = "dtgvChuDe";
             dtgvChuDe.RowHeadersWidth = 62;
             dtgvChuDe.RowTemplate.Height = 33;
             dtgvChuDe.Size = new Size(830, 397);
             dtgvChuDe.TabIndex = 0;
-            dtgvChuDe.CellContentClick += dtgvChuDe_CellContentClick;
+            dtgvChuDe.CellClick += dtgvChuDe_CellContentClick;
+            // 
+            // MaChuDe
+            // 
+            MaChuDe.DataPropertyName = "MaChuDe";
+            MaChuDe.HeaderText = "Mã chủ đề";
+            MaChuDe.MinimumWidth = 8;
+            MaChuDe.Name = "MaChuDe";
+            MaChuDe.Width = 150;
+            // 
+            // TenChuDe
+            // 
+            TenChuDe.DataPropertyName = "TenChuDe";
+            TenChuDe.HeaderText = "Tên chủ đề";
+            TenChuDe.MinimumWidth = 8;
+            TenChuDe.Name = "TenChuDe";
+            TenChuDe.Width = 150;
             // 
             // label1
             // 
@@ -143,5 +162,7 @@
         private Button btnThem;
         private Button btnSua;
         private Button btnXoa;
+        private DataGridViewTextBoxColumn MaChuDe;
+        private DataGridViewTextBoxColumn TenChuDe;
     }
 }
